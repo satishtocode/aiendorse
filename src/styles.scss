@@ -1,0 +1,1152 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$newendorse-primary: mat-palette($mat-indigo);
+$newendorse-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$newendorse-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$newendorse-theme: mat-light-theme((
+  color: (
+    primary: $newendorse-primary,
+    accent: $newendorse-accent,
+    warn: $newendorse-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($newendorse-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+// @import '../node_modules/font-awesome/css/font-awesome.css';
+@import "~src/assets/sass/variables";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "app/application-new/new_style.scss";
+body,
+html {
+    height: 100%;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 14px;
+    label,
+    button,
+    p {
+        letter-spacing: 0.3px !important;
+    }
+}
+html { overflow: hidden; height: 100%;}
+body { height: 100%; -webkit-font-smoothing: antialiased;background: #E8EDF2 !important;}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/assets/Roboto/Roboto-Regular.ttf) format("truetype");
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.outline_none {
+    outline: none;
+}
+
+.btn-save.focus,
+.btn-save:focus {
+    box-shadow: none !important;
+}
+
+.container-body {
+    width: 100%;
+    height: calc(100vh - 65px);
+    padding: 1.25rem;
+    overflow: scroll;
+}
+
+section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.card-outer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    // word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px -2px #8e8e8e80;
+    outline: none;
+}
+
+.card-inner {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+
+/* common css code start */
+
+.w-10 {
+    width: 10%;
+}
+
+.w-13 {
+    width: 13%;
+}
+
+.w-17 {
+    width: 17%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-75 {
+    width: 75% !important;
+}
+
+.d-grid {
+    display: grid;
+}
+.d-inlineblock{
+    display: inline-block;
+}
+
+/* color css code */
+
+.head_bg_cl {
+    background-color: $head-bg-color;
+}
+
+.font-head-cl {
+    color: $font-color;
+}
+
+.font-cl-grey {
+    color: #5d5d5d;
+}
+
+.black {
+    color: black;
+}
+
+.padding-2rem {
+    padding: 2rem;
+}
+
+
+/* color css code end */
+
+
+/* font css code */
+
+.font_6px {
+    font-size: 6px;
+}
+
+.font_8px {
+    font-size: 8px;
+}
+
+.font_10px {
+    font-size: 0.625rem;
+}
+
+.font_11px {
+    font-size: 0.6875rem;
+}
+
+.font_12px {
+    font-size: 0.75rem;
+}
+
+.font_13px {
+    font-size: 0.8125rem;
+}
+
+.font_14px {
+    font-size: 0.875rem;
+}
+
+.font_15px {
+    font-size: 0.9375rem;
+}
+
+.font_16px {
+    font-size: 1rem;
+}
+
+.font_17px {
+    font-size: 1.0625rem;
+}
+
+.font_18px {
+    font-size: 1.125rem;
+}
+
+.font_19px {
+    font-size: 1.1875rem;
+}
+
+.font_20px {
+    font-size: 1.25rem;
+}
+
+.font-weight-500 {
+    font-weight: 500;
+}
+
+.lt_spacing {
+    letter-spacing: 0.7px;
+}
+
+.text-transform {
+    text-transform: uppercase;
+}
+
+
+/* font css code end */
+
+
+/* border css code */
+
+.border-right1px {
+    border-right: 1px solid #ccc;
+}
+
+.br-5 {
+    border-radius: 5px;
+}
+
+.b-b {
+    border-bottom: 1px solid #dee2e6;
+}
+
+
+/* border css code */
+
+
+/* common css code end */
+
+//common button css
+.btn.focus,
+.btn:focus {
+    outline: 0;
+    box-shadow: initial !important;
+}
+
+.continue_button {
+    text-align: center;
+    button {
+        background-color: $font-color;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 12px;
+        padding: 5px 15px;
+        outline: none !important;
+    }
+}
+
+// .btn-save {
+//     background-color: #00C897 !important;
+//     color: white !important;
+//     border-radius: 5px !important;
+//     font-size: 13px !important;
+//     padding: 3px 10px !important;
+//     outline: none !important;
+//     border-color: #00C897    !important;
+//     opacity: initial !important;
+// }
+
+.cancle_button {
+    padding: 3px 10px !important;
+    background: transparent !important;
+    font-size: 13px !important;
+    border-radius: 5px !important;
+    color: $font-color !important;
+    border: 1px solid $font-color !important;
+    text-transform: initial;
+    cursor: pointer;
+    outline: none;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+//common button end
+// tabel css start
+.table-hover tbody tr:hover {
+    background-color: inherit !important;
+}
+
+table {
+    th {
+        font-size: 0.75rem;
+        color: #868686;
+        font-weight: initial;
+    }
+    tbody td,
+    tr td {
+        font-size: 0.875rem;
+        vertical-align: middle !important;
+    }
+}
+
+.table td,
+.table tr th {
+    padding: 1.2rem 0.6rem !important;
+    outline: none;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle !important;
+}
+
+.clickable-row th {
+    border-top: 0px solid #dee2e6 !important;
+}
+
+.data-verify-val td,
+.data-verify-val tr th {
+    padding: 0.4rem 2rem !important;
+    outline: none;
+    height: 49px;
+}
+
+.tabel_border_top tr th {
+    border-top: 0px;
+}
+
+.table_height {
+    height: calc(100% - 2%);
+}
+
+.table tr th {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+// tabel cdd end
+// common tabel button css start
+.btn-tick {
+    background-color: #00C897 !important;
+    color: #ffffff !important;
+    margin-right: 20px !important;
+    font-size: 13px !important;
+    padding: 3px 10px !important;
+}
+
+.btn-close {
+    background-color: #c5c5c5 !important;
+    margin-right: 25px !important;
+    font-size: 13px !important;
+    padding: 3px 15px !important;
+}
+
+// common tabel button css end
+// icons color change start
+.btn-default {
+    background-color: blue;
+    color: white;
+}
+
+.dot_tick_symbol {
+    background-color: white;
+    color: #ccc;
+    border-radius: 10px;
+    border-color: #ccc;
+}
+
+.defualt {
+    text-align: center;
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 12px;
+    color: #ccc;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.dot_tick_symbol {
+    text-align: center;
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 12px;
+    color: green;
+    border: 1px solid;
+    border-radius: 50%;
+    border-color: green;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}
+
+.dot_close_symbol {
+    text-align: center;
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 12px;
+    color: red;
+    border: 1px solid;
+    border-radius: 50%;
+    border-color: red;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}
+
+// icons color change end
+.db_tabel .dataTables_wrapper .dataTables_length {
+    label {
+        display: none;
+    }
+}
+
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting {
+    background-image: initial !important;
+}
+
+table.dataTable thead tr th {
+    border-top: 0px;
+}
+
+.dataTables_wrapper {
+    width: 100%;
+    font-size: 0.75rem;
+}
+
+table.dataTable thead th,
+table.dataTable thead td {
+    border-bottom: 1px solid #dddddd !important;
+    outline: none !important;
+    vertical-align: middle;
+    font-weight: 400 !important;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 0px solid #111111 !important;
+}
+
+table.dataTable tbody th,
+table.dataTable tbody td {
+    padding: 15px 10px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #333333 !important;
+    border: 1px solid #e6edff;
+    background-color: #e6edff !important;
+    background: linear-gradient(to bottom, #e6edff 0%, #e6edff 100%) !important;
+    border-radius: 50px;
+    border: 1px solid #e6edff !important;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    float: right;
+    text-align: right;
+    display: none;
+}
+
+.dataTables_info,
+.dataTables_paginate {
+    padding-top: 20px !important;
+}
+
+.paginate_button:hover {
+    color: white !important;
+    border: 0px solid #111111 !important;
+    background-color: #3b38c2 !important;
+    background: linear-gradient(to bottom, #3b38c2 0%, #3b38c2 100%) !important;
+    border-radius: 26px !important;
+}
+
+.dataTables_paginate .paginate_button.disabled {
+    color: #fff !important;
+}
+
+
+/* ng5 bar chart css start */
+
+.ng5-slider.animate .ng5-slider-bubble.ng5-slider-limit {
+    display: none !important;
+}
+
+.ng5-slider .ng5-slider-pointer {
+    background-color: transparent !important;
+    outline: none;
+}
+
+.ng5-slider .ng5-slider-pointer:after {
+    background: $font-color !important;
+    top: 10px !important;
+}
+
+.ng5-slider .ng5-slider-selection {
+    background: $font-color !important;
+}
+
+.ng5-slider .ng5-slider-bubble {
+    cursor: default !important;
+    display: flex !important;
+    width: 28px;
+    color: #fff !important;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    font-size: 0.6875rem !important;
+    top: -20px;
+    font-weight: 600;
+    line-height: 0.6875rem;
+    background: $font-color;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(1);
+    border-color: $font-color transparent transparent;
+    -webkit-transform-origin: 50% 150% 0;
+    -ms-transform-origin: 50% 150% 0;
+    transform-origin: 50% 150% 0;
+    transition: -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+    z-index: 9999999999;
+    outline: none !important;
+}
+
+.ng5-slider .ng5-slider-bubble::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 0;
+    height: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-left: 10px solid;
+    border-right: 10px solid;
+    border-top: 12px solid;
+    border-color: inherit;
+    top: 24px;
+    z-index: -1;
+}
+
+.ng5-slider {
+    margin: 45px 0 15px !important;
+}
+
+.percentage_div {
+    height: 7px !important;
+}
+
+.percentage_div .ng5-slider-bubble {
+    display: none !important;
+}
+
+.percentage_div .ng5-slider-pointer {
+    background-color: transparent !important;
+    display: none !important;
+}
+
+.percentage_div .ng5-slider-selection {
+    background: #29b049 !important;
+    border-radius: 29px !important;
+}
+
+.percentage_div .ng5-slider-bar {
+    height: 7px !important;
+}
+
+.data_list_bar {
+    height: 7px !important;
+}
+
+.data_list_bar .ng5-slider-bubble {
+    display: none !important;
+}
+
+.data_list_bar .ng5-slider-pointer {
+    background-color: transparent !important;
+    display: none !important;
+}
+
+.data_list_bar .ng5-slider-bar {
+    height: 4px !important;
+}
+
+.data_list_bar .ng5-slider-selection {
+    background: #0db9f0 !important;
+    border-radius: 29px !important;
+}
+
+.data_list_bar .ng5-slider .ng5-slider-bar-wrapper {
+    padding-top: 5px;
+}
+
+.top_spend_cat .ng5-slider .ng5-slider-pointer {
+    top: -5px;
+}
+
+.top_spend_cat .ng5-slider .ng5-slider-bubble {
+    display: none !important;
+}
+
+.top_spend_cat .ng5-slider {
+    margin: 15px 0 10px !important;
+}
+
+.ng5_list_overright .ng5-slider .ng5-slider-bubble::after {
+    display: none;
+}
+
+.ng5_list_overright .ng5-slider .ng5-slider-pointer:after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 25px;
+    left: 12px;
+    border-radius: 17px;
+    background: #fff !important;
+    border: 3px solid #0db9f0 !important;
+}
+
+.ng5_list_overright .ng5-slider .ng5-slider-bubble {
+    display: none !important;
+}
+
+.ng5_list_overright .ng5-slider .ng5-slider-pointer {
+    outline: none;
+}
+
+.ng5_list_overright .ng5-slider {
+    margin: 5px 0 30px !important;
+}
+
+.ng5_list_overright .ng5-slider .ng5-slider-selection {
+    background: #0db9f0 !important;
+}
+
+.tenure .ng5-slider .ng5-slider-pointer:after,
+.loan .ng5-slider .ng5-slider-pointer:after,
+.npa .ng5-slider .ng5-slider-pointer:after {
+    width: 12px;
+    height: 12px;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+}
+
+.tenure .ng5-slider.animate .ng5-slider-bubble,
+.loan .ng5-slider.animate .ng5-slider-bubble,
+.npa .ng5-slider.animate .ng5-slider-bubble {
+    display: none!important;
+}
+
+.ng5-slider.ngx_product_detail {
+    margin: 25px 0 15px !important;
+}
+
+
+/* ng5 bar chart css end */
+
+//header profile div
+
+/* profile div */
+
+.app_profile {
+    .back_button {
+        position: relative;
+    }
+    .back_button a {
+        position: absolute;
+        top: -10px;
+        font-size: 14px;
+        color: $font-color !important;
+    }
+}
+
+.profile_img {
+    img {
+        border-radius: 5px;
+        float: left;
+    }
+}
+
+.profile_name {
+    label {
+        font-size: 0.875rem;
+        padding-top: 30px;
+        padding-left: 20px;
+        margin: 0px;
+        white-space: nowrap;
+        width: 170px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    p a {
+        font-size: 0.875rem;
+        margin-bottom: 0px;
+        padding-left: 20px;
+        color: $font-color;
+    }
+}
+
+.app-user-profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* application status start */
+
+.application_status {
+    label {
+        font-size: 0.75rem;
+        color: $font-color;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+}
+
+
+/* application status end */
+
+
+/* profile_info start */
+
+.profile_info {
+    padding: 5px;
+    background: #191c6a;
+    border-radius: 5px;
+    vertical-align: middle;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    a {
+        font-size: 12px;
+    }
+}
+
+.profile_mess {
+    span {
+        a {}
+    }
+}
+
+.common-title {
+    font-size: 16px;
+    color: $font-color;
+    padding: 0px 13px;
+}
+
+
+/* profile_info end */
+
+.ngx-datepicker-container .ngx-datepicker-calendar-container {
+    z-index: 999999;
+}
+
+.datepicker_list .ngx-datepicker-container .ngx-datepicker-input {
+    box-sizing: border-box !important;
+    padding: 5px 10px !important;
+    font-size: 12px !important;
+    width: 100% !important;
+    outline: 0 !important;
+    border: 1px solid $input_bg_color !important;
+    background: $input_bg_color !important;
+    border-radius: 5px !important;
+}
+
+// broswer scroll
+::-webkit-scrollbar {
+    display: none;
+}
+
+// model popup
+.modal {
+    z-index: 1000000 !important;
+}
+
+.regular_checkbox:checked {
+    background: url(../src/assets/img/svg/checkbox.svg);
+    width: 20px;
+    height: 20px;
+    background-size: 17px 13px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    outline: none;
+}
+
+.regular_checkbox {
+    -webkit-appearance: none;
+    background: url(../src/assets/img/svg/blank_checkbox.svg);
+    width: 20px;
+    height: 20px;
+    background-size: 17px 13px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    outline: none;
+}
+
+// common css
+.label-light {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.common_field {
+    label {
+        font-size: 13px;
+        color: $font-light-grey;
+        font-weight: 600;
+    }
+}
+
+.application_selelct {
+    background-color: $input_bg_color !important;
+    font-size: 12px !important;
+    border: none !important;
+    height: calc(1.8em + 0.6rem + 0px) !important;
+    box-shadow: initial !important;
+    background: url(../src/assets/img/svg/drop-down-arrow.svg) no-repeat right #000;
+    -webkit-appearance: none;
+    background-size: 8px;
+    background-position-x: 95%;
+}
+
+.application_input {
+    background-color: $input_bg_color !important;
+    font-size: 12px !important;
+    border: none !important;
+    height: calc(1.8em + 0.6rem + 0px) !important;
+    box-shadow: initial !important;
+    -webkit-appearance: none;
+    background-size: 8px;
+    background-position-x: 95%;
+}
+
+.input_flied {
+    background-color: $input_bg_color !important;
+    font-size: 12px !important;
+    border: none !important;
+    height: calc(1.8em + 0.6rem + 0px) !important;
+    box-shadow: initial !important;
+}
+
+// input select css start
+.application_select {
+    background-color: $input_bg_color !important;
+    font-size: 12px !important;
+    border: none !important;
+    height: calc(1.8em + 0.6rem + 0px) !important;
+    box-shadow: initial !important;
+    background: url(../src/assets/img/svg/drop-down-arrow.svg) no-repeat right #000;
+    -webkit-appearance: none;
+    background-size: 8px;
+    background-position-x: 95%;
+}
+
+// input select css end
+
+/* modal-content*/
+
+.modal-content {
+    // width: auto !important;
+    padding: 25px;
+    box-shadow: 0px 0px 10px -2px #8e8e8e80;
+    border: 0px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 10px !important;
+}
+
+.perfect_scroll_bar {
+    overflow: scroll;
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: calc(100vh - 150px);
+}
+
+.input-paading {
+    padding-bottom: 10px;
+}
+
+.has-error {
+    color: red;
+    font-size: 11px;
+    position: absolute;
+}
+
+.checkboxform {
+    padding-top: 12px;
+}
+
+.view_edit_button {
+    background: transparent;
+    border: 0px;
+    transition: transform 0.2s;
+}
+
+.view_edit_button:focus {
+    outline: none;
+}
+
+.view_edit_button:hover {
+    transform: scale(1.5);
+}
+
+.modal-backdrop {
+    display: none;
+}
+
+// profile info view
+// profile info view 
+.profile_info_inside {
+    float: left;
+    position: absolute;
+    right: -330px;
+    top: 29vh;
+    z-index: 9999;
+    transition: 0.5s;
+    display: none;
+}
+
+.profile_info_inside.show {
+    right: 0;
+    display: block;
+    padding: 5px 13px;
+    margin-bottom: 10px;
+}
+
+.multiselect-dropdown {
+    .dropdown-btn {
+        .dropdown-down {
+            display: none !important;
+        }
+        background-color: $input_bg_color !important;
+        font-size: 12px !important;
+        border: none !important;
+        height: calc(1.8em + 0.6rem + 0px) !important;
+        box-shadow: initial !important;
+        background: url(../src/assets/img/svg/drop-down-arrow.svg) no-repeat right #000;
+        -webkit-appearance: none;
+        background-size: 8px;
+        background-position-x: 95%;
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495068;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s;
+    }
+}
+
+// application left right width
+.leftside_width {
+    width: 275px;
+    float: left;
+}
+
+.rightside_width {
+    width: calc(100% - 275px);
+    float: left;
+}
+
+.switch.switch-small {
+    height: 16px !important;
+}
+
+.switch.switch-small small {
+    width: 15px !important;
+    height: 15px !important;
+    right: calc(100% - 15px) !important;
+    
+}
+
+.analysis_button {
+    font-size: 12px;
+    border: 1px solid #3b38c2;
+    border-radius: 10px;
+    color: #3b38c2;
+    padding: 3px 20px;
+    outline: none;
+}
+
+.pagination {
+    float: right;
+    margin: 0;
+}
+
+.pagination li a.active {
+    background-color: #191C6A;
+    color: #fff;
+    border-radius: 18px;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin: 0px 3px;
+    cursor: pointer;
+}
+
+.pagination li a.active:hover {
+    background-color: #3B38C2;
+    color: #fff;
+    border-radius: 18px;
+}
+
+.pagination li a {
+    border-radius: 18px;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin: 0px 3px;
+    cursor: pointer;
+}
+
+.pagination li a:hover {
+    background: whitesmoke;
+}
+
+.delete_icon {
+    font-size: initial;
+}
+
+.ng-select.ng-select-single .ng-select-container {
+    //height: 36px;
+    //width: 108%;
+    background-color: #f0f0f0 !important;
+    border: 1px solid #eaeaea61 !important;
+    font-size: 12px !important;
+    color: #6f6f6f !important;
+    height: calc(1.5em + 0.6rem + 0px) !important;
+}
+
+.switch.checked small {
+    right: 0 !important;
+}
+
+.dis_info{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.crncy_font{
+    font-size: 0.8rem;
+}
+
+// .currency_space_split {
+//     display: inline-block;
+//   }
+// .currency_space_split::first-letter{
+//     padding-right: 0.3em;
+// }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.app_scroll{
+    height: calc(100vh - 185px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.form-control{
+    padding: .375rem 1.75rem!important;
+}
+
+.vid_prc{
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: rgb(255 255 255 / 90%);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    color: #635f5f;
+    z-index: 10000;
+}
+.grey-backdrop{
+    display: block !important;
+    background-color:#191C6B !important;
+}
+.modal.fade{
+    background: rgba(0,0,0,0.65);
+}
+textarea{
+    resize: none !important;
+    padding:0.8rem;
+}
+textarea:focus{
+    outline-color: rgba(19, 25, 77, 0.65);
+}
+
+.grid-content{
+    grid-template-columns: 20% 77%;
+    gap: 3%;
+    height: calc(100vh - 100px) !important;
+    overflow: scroll;
+}
